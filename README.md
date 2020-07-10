@@ -4,6 +4,22 @@ In-App Provisioning Utils consists of 2 helpers:
 1. [PassKitCardDetector](#PassKitCardDetector) - logic for button 'Add Card to Apple Pay'
 2. [PassKitRequestGenerator](#PassKitRequestGenerator) - implements In-App Provisioning flow
 
+## Requirements
+* iOS 10.3+
+
+## Installation
+
+### CocoaPods
+```
+pod 'apple-pay-in-app-provisioning-utils', :git => 'https://github.com/qiwi/apple-pay-in-app-provisioning-utils'
+```
+
+### Carthage
+```
+git "https://github.com/qiwi/apple-pay-in-app-provisioning-utils" "master"
+```
+
+
 ## Preparation
 Before use them you should setup Xcode project:
 1. Turn on Wallet in target capabilities
