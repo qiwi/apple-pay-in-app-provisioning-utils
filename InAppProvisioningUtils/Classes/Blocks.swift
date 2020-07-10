@@ -11,4 +11,3 @@ import Foundation
 public typealias Completion = (Result) -> Void
 public typealias InAppResultBlock = (InAppRequest) -> Void
 public typealias RequestBlock = (PassData, @escaping InAppResultBlock) -> Void
-

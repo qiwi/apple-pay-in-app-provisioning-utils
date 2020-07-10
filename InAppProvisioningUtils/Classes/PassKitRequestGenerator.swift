@@ -29,6 +29,19 @@ public class PassKitRequestGenerator: NSObject {
 	
 	private let passKitDelegate: PassKitViewControllerDelegate
 
+	
+	/// Setup you logic for inAppViewController
+	/// - Parameters:
+	///   - cardholderName:
+	///   - primaryAccountIdentifier: you get it from PassKitCardDetectorResult
+	///   - primaryAccountSuffix: last 4 digits of card
+	///   - localizedDescription: for instance card name
+	///   - paymentNetwork: VISA/MasterCard
+	///   - encryptionScheme: ECC_V2/RSA_V2
+	///   - pollingFrequency: After in-app completion to apple watch, you need to wait a bit time, card adds to passKit not immediately :(
+	///   - pollingAttemptCount: Max time for polling result
+	///   - requestBlock: pass data to your backend and back to apple
+	///   - completion:
 	public init(cardholderName: String,
 				primaryAccountIdentifier: String?,
 				primaryAccountSuffix: String,
@@ -50,6 +63,8 @@ public class PassKitRequestGenerator: NSObject {
 		self.passKitDelegate = PassKitViewControllerDelegate(pollingFrequency: pollingFrequency, pollingAttemptCount: pollingAttemptCount, requestBlock: requestBlock, completion: completion)
 	}
 
+	
+	/// Show it for user for add card to apple pay
 	public func inAppViewController() -> UIViewController {
 		guard let requestConfiguration = generateRequestConfiguration() else {
 			fatalError()
