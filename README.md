@@ -42,7 +42,7 @@ Before use them you should setup Xcode project:
 
  ## PassKitCardDetector
 
- PassKitCardDetector allows you to check secure chip on iphone and apple watch for implement 'Add Card to Apple Pay' button!
+ PassKitCardDetector allows you to check secure chip on device and apple watch for implement 'Add Card to Apple Pay' button!
  Usage:
  ```swift
 public static func checkSupportApplePay(cardSuffix: String, bankName: String) -> PassKitCardDetectorResult
