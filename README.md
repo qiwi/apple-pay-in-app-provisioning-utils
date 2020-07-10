@@ -32,7 +32,7 @@ Before use them you should setup Xcode project:
 public static func checkSupportApplePay(cardSuffix: String, bankName: String) -> PassKitCardDetectorResult
 
 // cardSuffix - 4 last digits of card
-// bankName - need to filter cards
+// bankName - need to filter cards - you can find it with bankNames() if added card before with 'Apple Wallet'
 
 enum PassKitCardDetectorResult {
 	case notSupport
