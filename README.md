@@ -21,7 +21,7 @@ Before use them you should setup Xcode project:
  1. Turn on with [match action](https://docs.fastlane.tools/actions/match/) '*template_name*' parameter in [fastlane](https://fastlane.tools)
  2. Or manual on [developer.apple.com](https://developer.apple.com) and edit Provision profiles ![](./images/provision-profile.png)
 
-4. In payment system admin page setup cards design, link you app for cards (app id, team id, deeplink to app)
+4. In payment system admin page (Visa/MasterCard/...) setup cards design, link you app for cards (app id, team id, deeplink to app)
 
 
  ## PassKitCardDetector
