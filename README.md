@@ -73,7 +73,7 @@ public static func isApplePayAvailableForDevice() -> Bool
 ```
 
  ## PassKitRequestGenerator
-
+ ### Warning: You should test it only on testflight builds, in all other cases - completion will fail
  PassKitRequestGenerator helps you implement In-App Provisioning flow:
 
 1. Initialization
