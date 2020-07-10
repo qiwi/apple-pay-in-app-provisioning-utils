@@ -86,7 +86,7 @@ public static func isApplePayAvailableForDevice() -> Bool
        encryptionScheme: EncryptionScheme, // ECC_V2/RSA_V2
        pollingFrequency: Double = 0.2, // After in-app completion to apple watch, you need to wait a bit time, card adds to passKit not immediately :(
        pollingAttemptCount: Int = 5,
-       requestBlock: @escaping RequestBlock,
+       requestBlock: @escaping RequestBlock, //pass data to your backend and back to apple
        completion: @escaping Completion) {}
  ```
 2. Create In-AppViewController, which you should present to user
