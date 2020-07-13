@@ -11,7 +11,7 @@ In-App Provisioning Utils consists of 2 helpers:
 
 ### CocoaPods
 ```
-pod 'apple-pay-in-app-provisioning-utils', :git => 'https://github.com/qiwi/apple-pay-in-app-provisioning-utils'
+pod 'InAppProvisioningUtils', :git => 'https://github.com/qiwi/apple-pay-in-app-provisioning-utils'
 ```
 
 ### Carthage
