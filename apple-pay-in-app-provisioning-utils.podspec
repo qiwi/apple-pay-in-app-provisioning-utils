@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.platform = :ios
   s.ios.deployment_target = '10.3'
-  s.name = 'apple-pay-in-app-provisioning-utils'
+  s.name = 'InAppProvisioningUtils'
   s.summary = 'Helpers for Apple Pay In-app Provisioning + button logic (Add card to apple pay)'
   s.requires_arc = true
   s.version = '1.0'
