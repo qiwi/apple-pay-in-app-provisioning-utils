@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C2DBE3F25B034030080BC1B /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2DBE3E25B034030080BC1B /* Package.swift */; };
 		896739D32334B7C300689654 /* InAppProvisioningUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 896739D12334B7C300689654 /* InAppProvisioningUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		896739DB2334B7DF00689654 /* PassKitCardDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896739D92334B7DE00689654 /* PassKitCardDetector.swift */; };
 		896739DC2334B7DF00689654 /* PassKitRequestGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896739DA2334B7DF00689654 /* PassKitRequestGenerator.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C2DBE3E25B034030080BC1B /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		896739CE2334B7C300689654 /* InAppProvisioningUtils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = InAppProvisioningUtils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		896739D12334B7C300689654 /* InAppProvisioningUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InAppProvisioningUtils.h; sourceTree = "<group>"; };
 		896739D22334B7C300689654 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +42,7 @@
 		896739C42334B7C300689654 = {
 			isa = PBXGroup;
 			children = (
+				7C2DBE3E25B034030080BC1B /* Package.swift */,
 				896739D02334B7C300689654 /* InAppProvisioningUtils */,
 				896739CF2334B7C300689654 /* Products */,
 			);
@@ -146,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C2DBE3F25B034030080BC1B /* Package.swift in Sources */,
 				896739DB2334B7DF00689654 /* PassKitCardDetector.swift in Sources */,
 				896739DC2334B7DF00689654 /* PassKitRequestGenerator.swift in Sources */,
 				89A72AA9234753DF007710A3 /* Blocks.swift in Sources */,
