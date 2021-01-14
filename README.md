@@ -9,6 +9,11 @@ In-App Provisioning Utils consists of 2 helpers:
 
 ## Installation
 
+### Swift Package Manager
+
+- File > Swift Packages > Add Package Dependency
+- Add https://github.com/qiwi/apple-pay-in-app-provisioning-utils.git
+
 ### CocoaPods
 ```
 pod 'InAppProvisioningUtils', :git => 'https://github.com/qiwi/apple-pay-in-app-provisioning-utils'
