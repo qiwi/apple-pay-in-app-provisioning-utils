@@ -3,7 +3,7 @@
 import PackageDescription
 
 let package = Package(
-	name: "InAppProvisioningUtils",
+	name: "In-App Provisioning Utils",
 	platforms: [
 		.iOS("10.3"),
 	],
