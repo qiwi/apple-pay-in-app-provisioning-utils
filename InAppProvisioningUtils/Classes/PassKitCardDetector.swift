@@ -9,31 +9,31 @@ import Foundation
 import PassKit
 
 public enum PassKitCardDetectorResult {
-	case notSupport
-	case disabled
-	case enabled(_ primaryAccountIdentifier:String?)
+    case notSupport
+    case disabled
+    case enabled(_ primaryAccountIdentifier:String?)
 }
 
 
 public class PassKitCardDetector {
-	///  Allows you to check secure chip on device and apple watch
-	/// - Parameters:
-	///   - cardSuffix: 4 last digits of card
-	///   - bankName: need to filter cards - you can find it with bankNames() if added card before with 'Apple Wallet' 
-	/// - Returns: enum PassKitCardDetectorResult
-	public static func checkSupportApplePay(cardSuffix: String, bankName: String? = nil) -> PassKitCardDetectorResult {
-		assert(cardSuffix.count == 4, "cardSuffix lenght should be equal to 4 characters!")
-		
-		if !isApplePayAvailableForDevice {
-			return .notSupport
-		}
+    ///  Allows you to check secure chip on device and apple watch
+    /// - Parameters:
+    ///   - cardSuffix: 4 last digits of card
+    ///   - bankName: need to filter cards - you can find it with bankNames() if added card before with 'Apple Wallet'
+    /// - Returns: enum PassKitCardDetectorResult
+    public static func checkSupportApplePay(cardSuffix: String, bankName: String? = nil) -> PassKitCardDetectorResult {
+        assert(cardSuffix.count == 4, "cardSuffix lenght should be equal to 4 characters!")
+
+        if !isApplePayAvailableForDevice {
+            return .notSupport
+        }
 
         if #available(iOS 13.4, *) {
             return canAddToApplePaySecurePass(cardSuffix, bankName: bankName)
         } else {
             return canAddToApplePayPass(cardSuffix, bankName: bankName)
         }
-	}
+    }
 
     private static func canAddToApplePayPass(_ cardSuffix: String, bankName: String? = nil) -> PassKitCardDetectorResult {
         let passLibrary = PKPassLibrary()
@@ -55,7 +55,7 @@ public class PassKitCardDetector {
         return .disabled
     }
 
-	/// Allow get bank names from linked with your app cards in 'Apple Wallet'
+    /// Allow get bank names from linked with your app cards in 'Apple Wallet'
     public static var bankNames: [String] {
         let passLibrary = PKPassLibrary()
         var arr = passLibrary.passes(of: .payment).map({ $0.organizationName })
@@ -65,28 +65,28 @@ public class PassKitCardDetector {
             arr.append(contentsOf: passLibrary.remotePaymentPasses().map({ $0.organizationName }))
         }
         return Array(Set(arr))
-	}
+    }
 
-	private static func pass(of passes: [PKPass], suffix: String, bankName: String? = nil) -> PKPass? {
-		let pass = passes.first { pass -> Bool in
-			var passSuffix: String = "none"
-			if let cardSuffix = pass.paymentPass?.primaryAccountNumberSuffix {
-				passSuffix = cardSuffix
-			}
+    private static func pass(of passes: [PKPass], suffix: String, bankName: String? = nil) -> PKPass? {
+        let pass = passes.first { pass -> Bool in
+            var passSuffix: String = "none"
+            if let cardSuffix = pass.paymentPass?.primaryAccountNumberSuffix {
+                passSuffix = cardSuffix
+            }
             let findedBank = bankName == nil ? bankNames.contains(pass.organizationName) : pass.organizationName == bankName
-			return findedBank && passSuffix == suffix
-		}
-		return pass
-	}
+            return findedBank && passSuffix == suffix
+        }
+        return pass
+    }
 
-	private static func getPrimaryAccountIdentifier(_ localPass: PKPass?, _ remotePass: PKPass?) -> String? {
+    private static func getPrimaryAccountIdentifier(_ localPass: PKPass?, _ remotePass: PKPass?) -> String? {
         return localPass?.paymentPass?.primaryAccountIdentifier
             ?? remotePass?.paymentPass?.primaryAccountIdentifier
-	}
+    }
 
     public static var isApplePayAvailableForDevice: Bool {
-		return PKAddPaymentPassViewController.canAddPaymentPass()
-	}
+        return PKAddPaymentPassViewController.canAddPaymentPass()
+    }
 }
 @available(iOS 13.4, *)
 public extension PassKitCardDetector {
