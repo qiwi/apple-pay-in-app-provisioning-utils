@@ -73,8 +73,8 @@ public class PassKitCardDetector {
             if let cardSuffix = pass.paymentPass?.primaryAccountNumberSuffix {
                 passSuffix = cardSuffix
             }
-            let findedBank = bankName == nil ? bankNames.contains(pass.organizationName) : pass.organizationName == bankName
-            return findedBank && passSuffix == suffix
+            let foundBank = bankName == nil ? bankNames.contains(pass.organizationName) : pass.organizationName == bankName
+            return foundBank && passSuffix == suffix
         }
         return pass
     }
@@ -89,7 +89,7 @@ public class PassKitCardDetector {
     }
 }
 @available(iOS 13.4, *)
-public extension PassKitCardDetector {
+extension PassKitCardDetector {
     private static func canAddToApplePaySecurePass(_ cardSuffix: String, bankName: String? = nil) -> PassKitCardDetectorResult {
         let passLibrary = PKPassLibrary()
         let passes = passLibrary.passes(of: .payment)
@@ -116,8 +116,8 @@ public extension PassKitCardDetector {
                 passSuffix = cardSuffix
             }
 
-            let findedBank = bankName == nil ? bankNames.contains(pass.organizationName) : pass.organizationName == bankName
-            return findedBank && passSuffix == suffix
+            let foundBank = bankName == nil ? bankNames.contains(pass.organizationName) : pass.organizationName == bankName
+            return foundBank && passSuffix == suffix
         }
         return pass
     }
