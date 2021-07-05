@@ -16,12 +16,22 @@ public struct Payload {
 	public var hex: String {
 		return raw.map { String(format: "%02x", $0) }.joined()
 	}
+
+    public init(_ raw: Data) {
+        self.raw = raw
+    }
 }
 
 public struct PassData {
 	public var certificates: [Payload]
 	public var nonce: Payload
 	public var nonceSignature: Payload
+
+    public init(certificates: [Payload], nonce: Payload, nonceSignature: Payload) {
+        self.certificates = certificates
+        self.nonce = nonce
+        self.nonceSignature = nonceSignature
+    }
 }
 
 public enum Result {
