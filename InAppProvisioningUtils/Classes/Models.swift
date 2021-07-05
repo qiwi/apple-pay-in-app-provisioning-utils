@@ -17,7 +17,7 @@ public struct Payload {
 		return raw.map { String(format: "%02x", $0) }.joined()
 	}
 
-    public init(_ raw: Data) {
+    public init(raw: Data) {
         self.raw = raw
     }
 }
