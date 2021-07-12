@@ -20,7 +20,7 @@ public class PassKitRequestGenerator: NSObject {
 		case RSA_V2
 	}
 
-	private let cardholderName: String
+	private let cardholderName: String?
 	private let paymentNetwork: PaymentNetwork
 	private let encryptionScheme: EncryptionScheme
 	private let primaryAccountIdentifier: String?
@@ -42,7 +42,7 @@ public class PassKitRequestGenerator: NSObject {
 	///   - pollingAttemptCount: Max time for polling result
 	///   - requestBlock: pass data to your backend and back to apple
 	///   - completion:
-	public init(cardholderName: String,
+	public init(cardholderName: String? = nil,
 				primaryAccountIdentifier: String?,
 				primaryAccountSuffix: String,
 				localizedDescription: String,
