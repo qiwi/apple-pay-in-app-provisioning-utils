@@ -67,12 +67,12 @@ public class PassKitRequestGenerator: NSObject {
 	/// Show it for user for add card to apple pay
 	public func inAppViewController() -> UIViewController? {
 		guard let requestConfiguration = generateRequestConfiguration() else {
-			assert(true, "Need correct requestConfiguration")
+			assert(false, "Need correct requestConfiguration")
             return nil
 		}
 
 		guard let vc = PKAddPaymentPassViewController(requestConfiguration: requestConfiguration, delegate: self.passKitDelegate) else {
-			assert(true, "Cann't create PKAddPaymentPassViewController. Check your permissions!")
+			assert(false, "Cann't create PKAddPaymentPassViewController. Check your permissions!")
             return nil
 		}
 		return vc
